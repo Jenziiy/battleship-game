@@ -1,0 +1,19 @@
+{
+  "name": "battleship-game",
+  "version": "1.0.0",
+  "description": "battleship game, that old game",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "battleship",
+    "game",
+    "grid"
+  ],
+  "author": "jeanine",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
