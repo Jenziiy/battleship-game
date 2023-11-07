@@ -1,7 +1,8 @@
-export class Ship {
+class Ship {
 
   constructor(length){
     this.length = length;
+    this.coords = null;
     this.hits = 0;
     this.sunk = false;
   }
@@ -18,3 +19,4 @@ export class Ship {
     return this.length === this.getHits() ? true : false; 
   }
 }
+module.exports = Ship;
