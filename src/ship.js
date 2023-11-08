@@ -2,7 +2,7 @@ class Ship {
 
   constructor(length){
     this.length = length;
-    this.coords = null;
+    this.coords = [];
     this.hits = 0;
     this.sunk = false;
   }

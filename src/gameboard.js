@@ -4,6 +4,7 @@ class GameBoard {
   
   constructor(){
     this.ships = this.setShips();
+    this.hitSet = new Set();
   }
 
   setShips(){
@@ -24,8 +25,20 @@ class GameBoard {
     return shipArray;
   }
 
-  receiveAttack(coordinates){
-
+  receiveAttack(coords){
+    const shipGotHit = this.findCoordsInFleet(this.ships, coords);
+    if(shipGotHit){
+      shipGotHit.hit();
+      this.hitSet.add(coords);
+      shipGotHit.isSunk();
+      return true;
+    } else {
+      this.hitSet.add(coords);
+      return false;
+    }
+  }
+  findCoordsInFleet(arr, value){
+    return arr.find(o => o.coords.includes(value));
   }
 }
 module.exports = GameBoard
