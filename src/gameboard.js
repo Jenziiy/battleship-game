@@ -1,10 +1,19 @@
 const ship = require('./ship.js');
-
+const graph = new Map();
 class GameBoard {
   
   constructor(){
     this.ships = this.setShips();
     this.hitSet = new Set();
+  }
+
+  setGraph(){
+    for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
+        this.graph.set(JSON.stringify([i,j]),[]);
+      }
+      
+    }
   }
 
   setShips(){
@@ -23,6 +32,22 @@ class GameBoard {
       shipArray.push(new ship(1)); 
     }
     return shipArray;
+  }
+
+  placeShips(){
+    let input = 0;
+    let x = 0;
+    let y = 0;
+    this.ships.forEach(ship => { 
+       for (let i = input; i < ship.length; i++) {
+        y = y > 9 ? y = 0 : y ;
+          ship.coords.push([x,y])
+          y++;
+        } 
+        x++;
+      } 
+    ); 
+    return this.ships;
   }
 
   receiveAttack(coords){
@@ -44,3 +69,7 @@ class GameBoard {
 module.exports = GameBoard
 const gameboard = new GameBoard();
 console.log(gameboard.setShips());
+console.log(gameboard.placeShips());
+gameboard.ships.forEach(ship => {
+  console.log(ship);
+});
