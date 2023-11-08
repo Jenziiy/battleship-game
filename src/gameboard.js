@@ -21,7 +21,7 @@ class GameBoard {
     for (let xSmall = 0; xSmall < 4; xSmall++) {
       shipArray.push(new ship(1)); 
     }
-    return [shipArray];
+    return shipArray;
   }
 
   receiveAttack(coordinates){
