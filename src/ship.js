@@ -16,7 +16,7 @@ class Ship {
   }
 
   isSunk(){
-    return this.length === this.getHits() ? true : false; 
+    return this.length === this.getHits() ? this.sunk = true : this.sunk = false; 
   }
 }
 module.exports = Ship;
