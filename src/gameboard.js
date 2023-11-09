@@ -12,7 +12,6 @@ class GameBoard {
       for (let j = 0; j < 10; j++) {
         this.graph.set(JSON.stringify([i,j]),[]);
       }
-      
     }
   }
 
