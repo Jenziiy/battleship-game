@@ -1,6 +1,6 @@
 const ship = require('./ship.js');
 const graph = new Map();
-class GameBoard {
+class Board {
   
   constructor(){
     this.ships = this.setShips();
@@ -65,10 +65,10 @@ class GameBoard {
     return arr.find(o => o.coords.includes(value));
   }
 }
-module.exports = GameBoard
-const gameboard = new GameBoard();
-console.log(gameboard.setShips());
-console.log(gameboard.placeShips());
-gameboard.ships.forEach(ship => {
+module.exports = Board
+const board = new Board();
+console.log(board.setShips());
+console.log(board.placeShips());
+board.ships.forEach(ship => {
   console.log(ship);
 });

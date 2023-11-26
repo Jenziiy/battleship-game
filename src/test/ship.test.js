@@ -1,5 +1,5 @@
 // test the public methods in the ship class
-const ship = require('../ship.js');
+const ship = require('../model/ship.js');
 
 test('create new ship with given length', () => {
   expect(new ship(4)).toMatchObject({

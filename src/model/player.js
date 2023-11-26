@@ -1,10 +1,10 @@
-const GameBoard = require('./gameboard.js');
+const Board = require('./board.js');
 
 class Player {
   constructor(name = 'robot', ships = 10){
     this.name = name;
     this.ships = ships;
-    this.gameboard = new GameBoard();
+    this.board = new Board();
   }
 }
 
